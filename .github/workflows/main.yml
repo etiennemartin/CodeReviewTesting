@@ -5,11 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: Hello world action step
-        id: hello
+      - name: Clean up stale branches
+        id: clean_stale_branhces
         uses: etiennemartin/stale-branch-action@v0.1
         with:
-          who-to-greet: "Mona the Octocat"
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          token: ${{ secrets.STALE_BRANCH_TOKEN }}
+          expiry: 365 # Days
+          grace: 14 # days
