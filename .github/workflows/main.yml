@@ -9,7 +9,7 @@ jobs:
         id: clean_stale_branhces
         uses: etiennemartin/stale-branch-action@v0.1
         with:
-          expiry: 1 # Days
+          expiry: 0 # Days
           grace: 0 # days
           merge_target: "master" # Target branch
           pr_title: "This is a custom title!"
